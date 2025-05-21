@@ -1,1 +1,7 @@
 packages/**/pnpm-lock.yaml
+
+# Local outputs
+node_modules/
+frontend/
+nextsite/
+staticpress.config.js

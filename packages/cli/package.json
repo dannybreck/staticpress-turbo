@@ -1,0 +1,14 @@
+{
+  "name": "@staticpress/cli",
+  "version": "0.0.0",
+  "private": true,
+  "bin": {
+    "spt": "./bin/spt.js"
+  },
+  "dependencies": {
+    "commander": "^14.0.0"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2"
+  }
+}
