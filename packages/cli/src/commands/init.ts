@@ -2,7 +2,7 @@ import { promises as fs } from 'fs';
 import path from 'path';
 
 export async function run (
-  stack = 'astro',
+  stack: 'astro' | 'next' = 'astro',
   output = 'frontend'
 ) {
   const cfgFile = 'staticpress.config.js';

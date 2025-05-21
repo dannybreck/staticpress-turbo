@@ -1,7 +1,17 @@
 module.exports = {
   root: true,
+  parser: '@typescript-eslint/parser',
+  plugins: ['@typescript-eslint'],
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+  ],
   env: { node: true, es2020: true },
-  parserOptions: { ecmaVersion: 2020, sourceType: 'module' },
-  extends: ['eslint:recommended'],
-  ignorePatterns: ['dist', 'node_modules'],
+  ignorePatterns: ['dist', 'node_modules', 'frontend', 'nextsite'],
+  overrides: [
+    {
+      files: ['packages/cli/bin/*.js'],     // keep the CJS launcher unchanged
+      rules: { '@typescript-eslint/no-require-imports': 'off' },
+    },
+  ],
 };
