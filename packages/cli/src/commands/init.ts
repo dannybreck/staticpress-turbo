@@ -3,7 +3,7 @@ import path from 'path';
 
 export async function run (
   stack: 'astro' | 'next' = 'astro',
-  output = 'frontend',
+  output = 'frontend'
 ) {
   const cfgFile = 'staticpress.config.js';
   const cfgPath = path.resolve(process.cwd(), cfgFile);
