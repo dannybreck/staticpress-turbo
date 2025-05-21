@@ -11,14 +11,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4      # Node first
+      # ① install pnpm (also adds its own cache layer)
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 10
+          run_install: false          # we run install explicitly later
+
+      # ② set up Node and enable pnpm cache
+      - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'pnpm'
-
-      - uses: pnpm/action-setup@v3       # then pnpm
-        with:
-          version: 10
 
       - run: pnpm install
       - run: pnpm run lint
